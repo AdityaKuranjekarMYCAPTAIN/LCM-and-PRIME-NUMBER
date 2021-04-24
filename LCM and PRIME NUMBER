@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<conio.h>
+int lcm(int , int );
+int main()
+{	
+	int num,num1;
+	printf("Input first number:");
+	scanf("%d",&num);
+	printf("Input second number:");
+	scanf("%d",&num1);
+	printf("LCM of %d and %d = %d",num,num1,lcm(num,num1));
+	getch();
+}
+int lcm(int a,int b)
+{   
+	static int m=0;
+	m=m+a;
+	if (m%a==0 && m%b==0)
+	return m;
+	return (lcm(a,b));
+	
+}
+---------------------------------------
+---------------------------------------
+lcm up....prime down
+---------------------------------------
+---------------------------------------
+#include<stdio.h>
+#include<conio.h>
+int prime(int,int);
+int main()
+{
+	int no , x;
+	printf("Enter a  number:");
+	scanf("%d",&no);
+	if (no==0 || no==1)
+	printf("%d is not a prime number.",no);
+	else
+	{
+	x=prime(2,no);
+	if(x==0)
+	printf("%d is a prime number.",no);
+	else
+	printf("%d is not a prime number.",no);
+	}
+	getch();
+}
+prime(int i,int no)
+{
+if (i==no)
+return 0;
+else
+{
+	if (no%i==0)
+	return 1;
+	else 
+	return (prime(i+1,no));
+}
+}
+------------------------------------------------
